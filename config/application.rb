@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Cookbook
+module CookbookApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
@@ -16,5 +16,6 @@ module Cookbook
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths << Rails.root.join('app', 'graph')
     config.autoload_paths << Rails.root.join('app', 'graph', 'types')
+    config.autoload_paths << Rails.root.join('app', 'graph', 'resolvers')
   end
 end
