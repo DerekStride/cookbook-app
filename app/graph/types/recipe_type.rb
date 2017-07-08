@@ -5,4 +5,9 @@ RecipeType = GraphQL::ObjectType.define do
 
   field :title, !types.String
   field :description, types.String
+
+  field :cookbook do
+    type CookbookType
+    resolve -> (recipe, _, _) { recipe.cookbook }
+  end
 end
